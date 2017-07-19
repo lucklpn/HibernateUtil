@@ -15,8 +15,10 @@ public class HibernateUtil {
 		if (sessionFactory == null) {
 			try {
 				registry = new StandardServiceRegistryBuilder().configure().build();
-				MetadataSources sources = new MetadataSources(registry);
-				Metadata metadata = sources.getMetadataBuilder().build();
+				MetadataSources sources;
+				sources = new MetadataSources(registry);
+				Metadata metadata;
+				metadata = sources.getMetadataBuilder().build();
 				sessionFactory = metadata.getSessionFactoryBuilder().build();
 
 			} catch (Exception e) {
